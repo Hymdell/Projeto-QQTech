@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.iconeUsuario {
+  padding-left: 33%;
+}
+.texto {
+  font-weight: bold;
+}
+caption,tr,td,th{
+    font-weight: bold;
+    font-size: large;
+    border: 1px solid #000000;
+    background-color: #D0E9DA;
+}
+.tabela {
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  background-color: #76d4a0;
+  border: 1px solid #000000;
+  padding: 10px;
+}
+.sidebar {
+  z-index: 0;
+  margin: auto;
+  position: fixed;
+  top: 60%;
+  left: 11%;
+  height: 80%;
+  transform: translate(-50%, -50%);
+  background-color: #d0e9da;
+  border: 1px solid #000000;
+  border-radius: 50px;
+  padding: 40px;
+}
+.botaoCadastrar {
+  position: fixed;
+  top: 25%;
+  left: 70%;
+  background-image: url("/site/img/plus-solid.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 33px 40px;
+  background-color: #064c2d;
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  width: 15%;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 25px;
+  font-style: italic;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(124, 123, 123, 0.404);
+  transition: transform 0.2s cubic-bezier(0.47, 2.02, 0.31, -0.36),
+    box-shadow 0.2s cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.botaoCadastrar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 10px rgba(124, 123, 123, 0.404);
+}
+.botaoSair {
+  background-image: url("/site/img/right-from-bracket-solid.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 50px 30px;
+  background-color: #064c2d;
+  display: flex;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 25px;
+  font-style: italic;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(124, 123, 123, 0.404);
+  transition: transform 0.2s cubic-bezier(0.47, 2.02, 0.31, -0.36),
+    box-shadow 0.2s cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+.botaoSair:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 10px rgba(124, 123, 123, 0.404);
+}

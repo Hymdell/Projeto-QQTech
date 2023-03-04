@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/site/css/" />
-    <link rel="stylesheet" href="/site/css/globalStyle.css">
+    <link rel="stylesheet" href="/site/css/dashboardAdminStyle.css" />
+    <link rel="stylesheet" href="/site/css/globalStyle.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
@@ -34,8 +34,50 @@
     </header>
     <main>
       <div class="container">
-        <div class="formLogin">
-          <h1 class="titulo">ADMIN</h1>
+        <div class="sidebar">
+          <img class="iconeUsuario" src="/site/img/user-solid.svg" width="70" alt="Icone Usuário">
+          <p class="texto" id="nomeMatricula">Nome: Admin | Matricula: 123456</p>
+          <p class="texto" id="cargoGestor">Cargo: Admin | Gestor: Admin</p>
+          <button class="botaoSair" onclick="Sair()">Sair</button>
+        </div>
+        <button class="botaoCadastrar" onclick="Cadastrar()">Cadastrar</button>
+        <div class="tabela">
+          <table>
+            <caption>Usuários</caption>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>CPF/CNPJ</th>
+                <th>Matrícula</th>
+                <th>Email</th>
+                <th>CLT/PJ</th>
+                <th>Gestor</th>
+                <th>Opções</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fulano de Tal</td>
+                <td>123.456.789-00</td>
+                <td>001</td>
+                <td>fulano@exemplo.com</td>
+                <td>CLT</td>
+                <td>Ciclano de Tal</td>
+                <td><button>Editar</button><button>Excluir</button></td>
+              </tr>
+              <tr>
+                <td>Ciclano de Tal</td>
+                <td>987.654.321-00</td>
+                <td>002</td>
+                <td>ciclano@exemplo.com</td>
+                <td>PJ</td>
+                <td></td>
+                <td><button>Editar</button><button>Excluir</button></td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
       </div>
     </main>
     <footer>
@@ -54,5 +96,5 @@
       </div>
     </footer>
   </body>
-  <script src="/site/js/"></script>
+  <script src="/site/js/dashboardAdmin.js"></script>
 </html>

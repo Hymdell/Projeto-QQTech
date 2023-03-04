@@ -1,16 +1,9 @@
-.container {
-  display: flex;
-  justify-content: center;
+body,
+main,
+input,
+button {
+  font-family: "Roboto", sans-serif;
 }
-.formLogin {
-  margin: auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
 .logoContainer {
   position: relative;
   width: 35%;
@@ -49,7 +42,7 @@
     width: calc(133% + 1.3px);
     height: 114px;
     transform: rotateY(180deg);
-    z-index: 0;
+    z-index: 1;
   }
   
   .formaHeader .shape-fill {
