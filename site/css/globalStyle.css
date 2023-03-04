@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+.formLogin {
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.logoContainer {
+  position: relative;
+  width: 35%;
+  height: auto;
+}
+.logoQueroQuero {
+  z-index: 3;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 40%;
+  height: auto;
+}
+.logoVerdeCard {
+  z-index: 3;
+  position: absolute;
+  padding-left: 8%;
+  top: 20px;
+  left: 35%;
+  width: 20%;
+  height: auto;
+  
+}
+.formaHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+  
+  .formaHeader svg {
+    position: relative;
+    display: block;
+    width: calc(133% + 1.3px);
+    height: 114px;
+    transform: rotateY(180deg);
+    z-index: 0;
+  }
+  
+  .formaHeader .shape-fill {
+    fill: #064c2d;
+  }
+  
+  .formaFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+  
+  .formaFooter svg {
+    position: relative;
+    display: block;
+    width: calc(133% + 1.3px);
+    height: 114px;
+    transform: rotateY(180deg);
+  }
+  
+  .formaFooter .shape-fill {
+    fill: #064c2d;
+  }
