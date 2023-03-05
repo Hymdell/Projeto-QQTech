@@ -23,7 +23,6 @@ caption{
   font-size: 200%;
 }
 button {
-  background-color: #dd8d24;
   color: white;
   padding: 10px;
   border: none;
@@ -93,7 +92,6 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
 .cadastrar {
   font-size: larger;

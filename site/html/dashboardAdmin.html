@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/site/css/dashboardAdminStyle.css" />
     <link rel="stylesheet" href="/site/css/globalStyle.css" />
-    <link rel="stylesheet" href="/site/css/teste.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
@@ -35,7 +34,9 @@
     </header>
     <div class="sidebar">
       <div class="sidebar-icon">
-        <span style="font-size: 6em; color: #09653c;"><i class="fa-solid fa-user"></i></span>
+        <span style="font-size: 6em; color: #09653c"
+          ><i class="fa-solid fa-user"></i
+        ></span>
       </div>
       <div class="sidebar-info">
         <h3>Nome:</h3>
@@ -44,45 +45,59 @@
         <h3>Gestor:</h3>
       </div>
       <div class="sidebar-buttons">
-        <button class="cadastrar">Cadastrar <span style="color: #DD8D24"><i class="fa-solid fa-plus"></i></span></button><br>
-        <button class="sair" onclick="Sair()">Sair <span style="color: #DD8D24"><i class="fa-solid fa-sign-out"></i></span></button>
+        <button class="cadastrar">
+          Cadastrar
+          <span style="color: #dd8d24"
+            ><i class="fa-solid fa-plus"></i
+          ></span></button
+        ><br />
+        <button class="sair" onclick="Sair()">
+          Sair
+          <span style="color: #dd8d24"
+            ><i class="fa-solid fa-sign-out"></i
+          ></span>
+        </button>
       </div>
     </div>
-      <div class="retangulo">
-        <table>
-          <caption>
-            Usuários
-          </caption>
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Matrícula</th>
-              <th>E-mail</th>
-              <th>Contrato</th>
-              <th>Cargo</th>
-              <th>Data de ingresso</th>
-              <th>Gestor</th>
-              <th>Opções</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>12345</td>
-              <td>johndoe@email.com</td>
-              <td>CLT</td>
-              <td>Gerente</td>
-              <td>01/01/2022</td>
-              <td>Michael Scott</td>
-              <td>
-                <button class="editar" onclick=""><i class="fa fa-pencil"></i></button>
-                <button class="excluir"  onclick=""><i class="fa fa-trash"></i></button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="retangulo">
+      <table>
+        <caption>
+          Usuários
+        </caption>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Matrícula</th>
+            <th>E-mail</th>
+            <th>Contrato</th>
+            <th>Cargo</th>
+            <th>Data de ingresso</th>
+            <th>Gestor</th>
+            <th>Opções</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>12345</td>
+            <td>johndoe@email.com</td>
+            <td>CLT</td>
+            <td>Gerente</td>
+            <td>01/01/2022</td>
+            <td>Michael Scott</td>
+            <td>
+              <button class="editar" onclick="">
+                <i class="fa fa-pencil"></i>
+              </button>
+              <button class="excluir" onclick="">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
     <footer>
       <div class="formaFooter">
         <svg
@@ -98,10 +113,10 @@
         </svg>
       </div>
     </footer>
+    <script src="/site/js/dashboardAdmin.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e0ab6c4879.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
-  <script src="/site/js/dashboardAdmin.js"></script>
-  <script
-    src="https://kit.fontawesome.com/e0ab6c4879.js"
-    crossorigin="anonymous"
-  ></script>
 </html>

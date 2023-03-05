@@ -1,3 +1,3 @@
-function Sair(){
-    window.location.href = "/site/html/index.html";
+function Sair() {
+  window.location.href = "/site/html/index.html";
 }

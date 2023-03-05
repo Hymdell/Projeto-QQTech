@@ -35,7 +35,6 @@ button {
     overflow: hidden;
     line-height: 0;
   }
-  
   .formaHeader svg {
     position: relative;
     display: block;
@@ -44,11 +43,9 @@ button {
     transform: rotateY(180deg);
     z-index: 1;
   }
-  
   .formaHeader .shape-fill {
     fill: #064c2d;
   }
-  
   .formaFooter {
     position: absolute;
     bottom: 0;
@@ -58,7 +55,6 @@ button {
     line-height: 0;
     transform: rotate(180deg);
   }
-  
   .formaFooter svg {
     position: relative;
     display: block;
@@ -66,7 +62,6 @@ button {
     height: 114px;
     transform: rotateY(180deg);
   }
-  
   .formaFooter .shape-fill {
     fill: #064c2d;
   }
