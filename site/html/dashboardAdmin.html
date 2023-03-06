@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/site/css/dashboardAdminStyle.css" />
     <link rel="stylesheet" href="/site/css/globalStyle.css" />
+    <link rel="stylesheet" href="/site/css/popupCadastro.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
@@ -45,7 +46,7 @@
         <h3>Gestor:</h3>
       </div>
       <div class="sidebar-buttons">
-        <button class="cadastrar">
+        <button id="btnAbrirPopup" class="cadastrar">
           Cadastrar
           <span style="color: #dd8d24"
             ><i class="fa-solid fa-plus"></i
@@ -96,6 +97,154 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <button id="btnFecharPopup" class="popup-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <div class="formaHeaderPopup">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="popup-titulo">CADASTRO</h2>
+        <div>
+          <input
+            class="popup-input nome"
+            type="text"
+            name="nome"
+            id="nome"
+            placeholder="Nome Completo"
+          />
+        </div>
+        <div>
+          <input
+            class="popup-input email"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email"
+          />
+        </div>
+        <div>
+          <input
+            class="popup-input matricula"
+            type="text"
+            name="matricula"
+            id="matricula"
+            placeholder="Matrícula"
+          />
+        </div>
+        <div class="popup-radio">
+          <div class="popup-titulo2">Tipo de Contrato</div>
+          <div class="popup-opcoes">
+            <input type="radio" name="contrato" id="clt" value="clt" />
+            <label for="clt">CLT</label>
+            <input type="radio" name="contrato" id="pj" value="pj" />
+            <label for="pj">PJ</label>
+          </div>
+        </div>
+        <div class="popup-dropdowns">
+          <div class="popup-dropdown">
+            <label for="gestor-dropdown" class="popup-dropdown-label"
+              >Gestor</label
+            >
+            <select id="gestor-dropdown" class="popup-dropdown-select">
+              <option value="gestor1">Gestor 1</option>
+              <option value="gestor2">Gestor 2</option>
+            </select>
+          </div>
+          <div class="popup-dropdown">
+            <label for="cargo-dropdown" class="popup-dropdown-label"
+              >Cargo</label
+            >
+            <select id="cargo-dropdown" class="popup-dropdown-select">
+              <option value="cargo1">Cargo 1</option>
+              <option value="cargo2">Cargo 2</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <button class="popup-cadastrar" id="btnCadastrar">CADASTRAR</button>
+        </div>
+        <div class="formaFooterPopup">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="confirmacaoPopup" class="popup-confirmacao">
+      <div class="popup-confirmacao-content">
+        <button id="btnFecharPopupConfirmacao" class="popup-confirmacao-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <h2 class="popup-titulo">Cadastro Realizado com sucesso</h2>
+        <div>
+          <button class="popup-confirmacao-ok" id="fecharPopup">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="negacaoPopup" class="popup-negacao">
+      <div class="popup-negacao-content">
+        <button id="btnFecharPopupNegacao" class="popup-negacao-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <h2 class="popup-titulo">O cadastro não foi realizado!</h2>
+        <div>
+          <button class="popup-negacao-ok" id="fecharPopup">OK</button>
+        </div>
+      </div>
     </div>
 
     <footer>
