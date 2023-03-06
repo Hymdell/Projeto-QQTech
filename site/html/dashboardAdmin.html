@@ -33,7 +33,8 @@
         </svg>
       </div>
     </header>
-    <div class="sidebar">
+
+    <div id="sidebar" class="sidebar">
       <div class="sidebar-icon">
         <span style="font-size: 6em; color: #09653c"
           ><i class="fa-solid fa-user"></i
@@ -60,7 +61,8 @@
         </button>
       </div>
     </div>
-    <div class="retangulo">
+
+    <div id="tabela" class="retangulo">
       <table>
         <caption>
           Usuários
@@ -87,10 +89,10 @@
             <td>01/01/2022</td>
             <td>Michael Scott</td>
             <td>
-              <button class="editar" onclick="">
+              <button class="editar" id="btnEditar">
                 <i class="fa fa-pencil"></i>
               </button>
-              <button class="excluir" onclick="">
+              <button class="excluir" id="btnExcluir">
                 <i class="fa fa-trash"></i>
               </button>
             </td>
@@ -203,9 +205,9 @@
       </div>
     </div>
 
-    <div id="confirmacaoPopup" class="popup-confirmacao">
+    <div id="confirmacaoPopupCadastrar" class="popup-confirmacao">
       <div class="popup-confirmacao-content">
-        <button id="btnFecharPopupConfirmacao" class="popup-confirmacao-fechar">
+        <button id="btnFecharPopupConfirmacaoCadastrar" class="popup-confirmacao-fechar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -220,14 +222,14 @@
         </button>
         <h2 class="popup-titulo">Cadastro Realizado com sucesso</h2>
         <div>
-          <button class="popup-confirmacao-ok" id="fecharPopup">OK</button>
+          <button class="popup-confirmacao-ok" id="btnOkCadastrar">OK</button>
         </div>
       </div>
     </div>
 
-    <div id="negacaoPopup" class="popup-negacao">
+    <div id="negacaoPopupCadastrar" class="popup-negacao">
       <div class="popup-negacao-content">
-        <button id="btnFecharPopupNegacao" class="popup-negacao-fechar">
+        <button id="btnFecharPopupNegacaoCadastrar" class="popup-negacao-fechar">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -242,7 +244,155 @@
         </button>
         <h2 class="popup-titulo">O cadastro não foi realizado!</h2>
         <div>
-          <button class="popup-negacao-ok" id="fecharPopup">OK</button>
+          <button class="popup-negacao-ok" id="btnOkCadastrar">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="popup-editar" class="popup-editar">
+      <div class="popup-content-editar">
+        <button id="btnFecharPopupEditar" class="popup-fechar-editar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <div class="formaHeaderPopupEditar">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="popup-titulo-editar">EDITAR</h2>
+        <div>
+          <input
+            class="popup-input-editar nome"
+            type="text"
+            name="nome-editar"
+            id="nome-editar"
+            placeholder="Nome Completo"
+          />
+        </div>
+        <div>
+          <input
+            class="popup-input-editar email"
+            type="email"
+            name="email-editar"
+            id="email-editar"
+            placeholder="Email"
+          />
+        </div>
+        <div>
+          <input
+            class="popup-input-editar matricula"
+            type="text"
+            name="matricula-editar"
+            id="matricula-editar"
+            placeholder="Matrícula"
+          />
+        </div>
+        <div class="popup-radio-editar">
+          <div class="popup-titulo2-editar">Tipo de Contrato</div>
+          <div class="popup-opcoes-editar">
+            <input type="radio" name="contrato-editar" id="clt-editar" value="clt" />
+            <label for="clt-editar">CLT</label>
+            <input type="radio" name="contrato-editar" id="pj-editar" value="pj" />
+            <label for="pj-editar">PJ</label>
+          </div>
+        </div>
+        <div class="popup-dropdowns-editar">
+          <div class="popup-dropdown-editar">
+            <label for="gestor-dropdown-editar" class="popup-dropdown-label-editar"
+              >Gestor</label
+            >
+            <select id="gestor-dropdown-editar" class="popup-dropdown-select-editar">
+              <option value="gestor1">Gestor 1</option>
+              <option value="gestor2">Gestor 2</option>
+            </select>
+          </div>
+          <div class="popup-dropdown-editar">
+            <label for="cargo-dropdown-editar" class="popup-dropdown-label-editar"
+              >Cargo</label
+            >
+            <select id="cargo-dropdown-editar" class="popup-dropdown-select-editar">
+              <option value="cargo1">Cargo 1</option>
+              <option value="cargo2">Cargo 2</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <button class="popup-btn-editar" id="btnEditarConcluir">EDITAR</button>
+        </div>
+        <div class="formaFooterPopupEditar">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="confirmacaoPopupEditar" class="popup-confirmacao">
+      <div class="popup-confirmacao-content">
+        <button id="btnFecharPopupConfirmacaoEditar" class="popup-confirmacao-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <h2 class="popup-titulo">Edição realizada com sucesso!</h2>
+        <div>
+          <button class="popup-confirmacao-ok" id="btnOkEditar">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="negacaoPopupEditar" class="popup-negacao">
+      <div class="popup-negacao-content">
+        <button id="btnFecharPopupNegacaoEditar" class="popup-negacao-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <h2 class="popup-titulo">A edição não foi realizada!</h2>
+        <div>
+          <button class="popup-negacao-ok" id="btnOkEditar">OK</button>
         </div>
       </div>
     </div>
@@ -262,6 +412,7 @@
         </svg>
       </div>
     </footer>
+
     <script src="/site/js/dashboardAdmin.js"></script>
     <script
       src="https://kit.fontawesome.com/e0ab6c4879.js"
