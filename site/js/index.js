@@ -1,5 +1,7 @@
 function Cargo() {
   let matricula = document.getElementById("matricula").value;
+  let mensagemErro = document.getElementById("mensagemErro");
+
   if (matricula == "admin") {
     window.location.href = "/site/html/dashboardAdmin.html";
   } else if (matricula == "colaborador") {
@@ -7,6 +9,8 @@ function Cargo() {
   } else if (matricula == "gestor") {
     window.location.href = "/site/html/dashboardGestor.html";
   } else {
-    alert("Matricula Invalida!");
+    mensagemErro.innerHTML = "Matrícula Inválida!";
+    document.getElementById("mensagemErro").classList.add("mensagemErro");
   }
 }
+
