@@ -30,6 +30,12 @@
   text-align: center;
   color: #d0e9da;
 }
+.popup-titulo-data {
+  position: relative;
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
+}
 .popup-fechar {
   position: absolute;
   width: 30px;
@@ -58,11 +64,25 @@
   border: 1px solid #000;
   border-radius: 5px;
   padding: 10px 10px 10px 30px;
-  margin: 15px;
+  margin: 5px;
   position: relative;
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 20px;
+}
+.popup-input-data {
+  background-color: #d0e9da;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 10px 10px 30px;
+  margin: 5px;
+  width: 160px;
+  position: relative;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  color: #000;
+  font-weight: bold;
 }
 .popup-input.nome {
   background-position: 5px;
@@ -79,6 +99,7 @@
 .popup-input::placeholder {
   color: #999;
   text-decoration: underline;
+  font-weight: bold;
 }
 .popup-cadastrar {
   position: relative;
@@ -156,6 +177,7 @@
   background-color: #d0e9da;
   font-size: 16px;
   color: #000000;
+  font-weight: bold;
 }
 .popup-dropdown-select::-ms-expand {
   display: none;
@@ -167,6 +189,7 @@
 .popup-dropdown-select option {
   background-color: #d0e9da;
   color: #000000;
+  font-weight: bold;
 }
 .popup-dropdown-select::after {
   content: "";
