@@ -43,6 +43,188 @@ button:hover {
   display: flex;
   justify-content: center;
 }
+.grafico-colaboradores{
+  position: fixed;
+  top: 37%;
+  left:41%;
+  transform: translate(-50%, -50%);
+  background-color: #D0E9DA;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  height: 240px;
+  width: 400px;
+  padding: 10px;
+}
+.titulo-grafico-colaboradores{
+  font-size: large;
+  top: 0%;
+  margin: 5px 0;
+}
+.texto-grafico-colaboradores{
+  top: 0%;
+  margin: 5px 0;
+}
+.status{
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.ativos{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #099A56;
+  color: white;
+  border: 1px solid #000000;
+}
+.ferias{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: orange;
+  color: white;
+  display: flex;
+  border: 1px solid #000000;
+}
+.pizza {
+  position: absolute;
+  top: 65%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  width: 170px;
+  height: 170px;
+}
+.botao-grafico-colaboradores {
+  position: relative;
+  top: -63%;
+  left: 75%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: medium;
+  background-color: #064c2d;
+}
+.grafico-solicitacoes{
+  position: fixed;
+  top: 28%;
+  left: 77%;
+  transform: translate(-50%, -50%);
+  background-color: #D0E9DA;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  height: 130px;
+  width: 500px;
+  padding: 10px;
+}
+.pizza2 {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 140px;
+}
+.titulo-grafico-solicitacoes{
+  font-size: large;
+  top: 0%;
+  margin: 5px 0;
+}
+.texto-grafico-solicitacoes{
+  font-weight: bold;
+  top: 0%;
+  margin: 5px 0;
+}
+.status-solicitacoes{
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.aprovados{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #099A56;
+  color: white;
+  border: 1px solid #000000;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.pendentes{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: orange;
+  color: white;
+  display: flex;
+  border: 1px solid #000000;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.negados{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  display: flex;
+  border: 1px solid #000000;
+  margin-left: 5px;
+}
+.notificacoes {
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: 470px 12px;
+  background-image: url("/site/img/bell-solid.svg");
+  position: fixed;
+  top: 50%;
+  left: 77%;
+  transform: translate(-50%, -50%);
+  background-color: #D0E9DA;
+  border: 1px solid #000000;
+  border-radius: 30px;
+  height: 80px;
+  width: 500px;
+  padding: 10px;
+}
+.titulo-notificacoes{
+  font-size: large;
+  top: 0%;
+  padding-bottom: -5px;
+  margin: 5px 0;
+}
+.texto-notificacoes{
+  top: 0%;
+  padding-bottom: 13px;
+  margin: 5px 0;
+}
+.botao-notificacoes {
+  position: relative;
+  top: -30%;
+  left: 37%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50px;
+  font-size: medium;
+  background-color: #064c2d;
+}
+.notificacao-indicador {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: orange;
+  font-size: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+}
+.notificacao-indicador.ativo {
+  display: flex;
+}
 .retangulo {
   top: 60%;
   left: 25%;

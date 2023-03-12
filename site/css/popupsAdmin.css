@@ -40,8 +40,8 @@
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 2%;
-  right: -2%;
+  top: 1%;
+  right: -1.5%;
   text-align: center;
   line-height: 30px;
   font-size: 16px;
@@ -71,6 +71,7 @@
   background-size: 20px;
 }
 .popup-input-data {
+  left: 100px;
   background-color: #d0e9da;
   border: 1px solid #000;
   border-radius: 5px;
@@ -93,6 +94,11 @@
   background-image: url("/site/img/envelope-solid.svg");
 }
 .popup-input.matricula {
+  left: 100px;
+  background-position: 5px;
+  background-image: url("/site/img/id-card-solid.svg");
+}
+.popup-input.cpf_cnpj {
   background-position: 5px;
   background-image: url("/site/img/id-card-solid.svg");
 }
@@ -103,7 +109,7 @@
 }
 .popup-cadastrar {
   position: relative;
-  left: 25%;
+  left: 150px;
   text-align: center;
   color: #d0e9da;
   border-radius: 50px;
@@ -405,8 +411,8 @@
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 2%;
-  right: -2%;
+  top: 1%;
+  right: -1.5%;
   text-align: center;
   line-height: 30px;
   font-size: 16px;
@@ -453,7 +459,7 @@
 }
 .popup-btn-editar {
   position: relative;
-  left: 35%;
+  left: 170px;
   text-align: center;
   color: #d0e9da;
   border-radius: 50px;
@@ -589,7 +595,7 @@
   position: relative;
   display: block;
   width: calc(220% + 1.3px);
-  height: 50px;
+  height: 60px;
   transform: rotateY(180deg);
   z-index: -1;
 }

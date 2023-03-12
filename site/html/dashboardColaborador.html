@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/e0ab6c4879.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard Colaborador</title>
   </head>
   <body>
@@ -62,6 +67,29 @@
       </div>
     </div>
 
+    <div id="grafico" class="grafico">
+      <h1 class="titulo-grafico">Colaboradores da Equipe</h1>
+      <h1 class="titulo-grafico">Status</h1>
+      <p class="texto-grafico">Total: 20 Colaboradores</p>
+      <div class="status">
+        <span class="ativos"></span>
+        <p class="texto-grafico">Ativos</p>
+      </div>
+      <div class="status">
+        <span class="ferias"></span>
+        <p class="texto-grafico">Férias</p>
+      </div>
+      <button class="botao-grafico">Ver Equipe</button>
+      <div class="pizza"><canvas id="graficoColaboradores"></canvas></div>
+    </div>
+
+    <div id="notificacoes" class="notificacoes">
+      <h1 class="titulo-notificacoes">Notificações</h1>
+      <p class="texto-notificacoes">Você tem 1 notificação!</p>
+      <button class="botao-notificacoes">Ver notificações</button>
+      <span class="notificacao-indicador"></span>
+    </div>
+
     <div id="tabela" class="retangulo">
       <table>
         <caption>
@@ -73,6 +101,7 @@
             <th>Data Início</th>
             <th>Dias</th>
             <th>Data Final</th>
+            <th>Antecipação do 13º</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -82,7 +111,8 @@
             <td>02/01/2022</td>
             <td>5</td>
             <td>07/01/2022</td>
-            <td>Aprovado</td>
+            <td>SIM</td>
+            <td>APROVADO</td>
           </tr>
         </tbody>
       </table>
@@ -140,6 +170,17 @@
               <option value="15">15 Dias</option>
               <option value="20">20 Dias</option>
               <option value="30">30 Dias</option>
+            </select>
+          </div>
+        </div>
+        <div class="popup-dropdowns">
+          <div class="popup-dropdown">
+            <label for="decimo-dropdown" class="popup-dropdown-label"
+              >Atencipação do 13º</label
+            >
+            <select id="decimo-dropdown" class="popup-dropdown-select">
+              <option value="sim">SIM</option>
+              <option value="não">NÃO</option>
             </select>
           </div>
         </div>
@@ -240,9 +281,5 @@
     </footer>
 
     <script src="/site/js/dashboardColaborador.js"></script>
-    <script
-      src="https://kit.fontawesome.com/e0ab6c4879.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

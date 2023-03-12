@@ -65,3 +65,32 @@ function atualizaDataFinal() {
   const dataFinalFormatada = dataFinal.toISOString().split("T")[0];
   dataFinalInput.value = dataFinalFormatada;
 }
+
+//INICIO DO JS DO GRÁFICO DE COLABORADORES
+var ctx = document.getElementById("graficoColaboradores").getContext("2d");
+var myChart = new Chart(ctx, {
+  type: "pie",
+  data: {
+    datasets: [
+      {
+        data: [15, 5],
+        backgroundColor: ["#099A56", "orange"],
+        borderColor: ["#000", "#000"],
+        borderWidth: 2,
+      },
+    ],
+  },
+  options: {
+    legend: {
+      display: true,
+    },
+  },
+});
+
+/*
+// Adicionar o indicador de notificação
+$('.notificacao-indicador').addClass('ativo');
+
+// Remover o indicador de notificação
+$('.notificacao-indicador').removeClass('ativo');
+*/

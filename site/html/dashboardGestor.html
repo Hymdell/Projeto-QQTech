@@ -11,6 +11,11 @@
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/e0ab6c4879.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard Gestor</title>
   </head>
   <body>
@@ -60,6 +65,46 @@
           ></span>
         </button>
       </div>
+    </div>
+
+    <div id="grafico-colaboradores" class="grafico-colaboradores">
+      <h1 class="titulo-grafico-colaboradores">Colaboradores da Equipe</h1>
+      <h1 class="titulo-grafico-colaboradores">Status</h1>
+      <p class="texto-grafico-colaboradores">Total: 20 Colaboradores</p>
+      <div class="status">
+        <span class="ativos"></span>
+        <p class="texto-grafico-colaboradores">Ativos</p>
+      </div>
+      <div class="status">
+        <span class="ferias"></span>
+        <p class="texto-grafico-colaboradores">Férias</p>
+      </div>
+      <button class="botao-grafico-colaboradores">Ver Equipe</button>
+      <div class="pizza"><canvas id="graficoColaboradores"></canvas></div>
+    </div>
+
+    <div id="grafico-solicitacoes" class="grafico-solicitacoes">
+      <h1 class="titulo-grafico-solicitacoes">Total de Solicitações</h1>
+      <div class="status-solicitacoes">
+        <p class="texto-grafico-solicitacoes">Aprovados</p>
+        <span class="aprovados"></span>
+      </div>
+      <div class="status-solicitacoes">
+        <p class="texto-grafico-solicitacoes">Pendentes</p>
+        <span class="pendentes"></span>
+      </div>
+      <div class="status-solicitacoes">
+        <p class="texto-grafico-solicitacoes">Negados</p>
+        <span class="negados"></span>
+      </div>
+      <div class="pizza2"><canvas id="graficoSolicitacoes"></canvas></div>
+    </div>
+
+    <div id="notificacoes" class="notificacoes">
+      <h1 class="titulo-notificacoes">Notificações</h1>
+      <p class="texto-notificacoes">Você tem 2 notificações!</p>
+      <button class="botao-notificacoes">Ver Pendentes</button>
+      <span class="notificacao-indicador"></span>
     </div>
 
     <div id="tabela" class="retangulo">
@@ -244,9 +289,5 @@
     </footer>
 
     <script src="/site/js/dashboardGestor.js"></script>
-    <script
-      src="https://kit.fontawesome.com/e0ab6c4879.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>

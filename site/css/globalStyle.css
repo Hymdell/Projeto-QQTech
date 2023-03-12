@@ -61,6 +61,7 @@ button {
     width: calc(133% + 1.3px);
     height: 80px;
     transform: rotateY(180deg);
+    z-index: 1;
   }
   .formaFooter .shape-fill {
     fill: #064c2d;
