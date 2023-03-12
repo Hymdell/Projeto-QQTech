@@ -68,6 +68,7 @@ button:hover {
 .texto-grafico{
   top: 0%;
   margin: 5px 0;
+  font-weight: bold;
 }
 .ativos{
   width: 12px;

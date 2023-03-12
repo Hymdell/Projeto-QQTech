@@ -63,6 +63,7 @@ button:hover {
 .texto-grafico-colaboradores{
   top: 0%;
   margin: 5px 0;
+  font-weight: bold;
 }
 .status{
   display: flex;
