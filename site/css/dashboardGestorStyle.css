@@ -275,8 +275,13 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 .solicitar {
+  font-size: larger;
+  background-color: #09653c;
+}
+.relatorio {
   font-size: larger;
   background-color: #09653c;
 }
