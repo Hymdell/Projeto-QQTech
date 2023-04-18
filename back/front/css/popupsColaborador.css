@@ -68,8 +68,8 @@
   font-weight: bold;
 }
 .popup-input-label {
-  font-weight: bold;
-}
+    font-weight: bold;
+  }
 .popup-input::placeholder {
   color: #999;
   text-decoration: underline;
@@ -179,8 +179,8 @@
 .formaFooterPopup .shape-fill {
   fill: #064c2d;
 }
-/* INICIO DO CSS DOS POPUPS DE CONFIRMAÇÃO E NEGAÇÃO */
-.popup-confirmacao {
+/* INICIO DO CSS DOS POPUPS DINÃMICO*/
+.popup-dinamico {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -191,7 +191,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease-in-out;
 }
-.popup-confirmacao-content {
+.popup-dinamico-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -202,13 +202,13 @@
   border: 10px solid #76d4a0;
   border-radius: 10px;
 }
-.popup-confirmacao h2 {
+.popup-dinamico h2 {
   color: #000;
   font-size: 2rem;
   text-align: center;
   border-radius: 0.5rem;
 }
-.popup-confirmacao-fechar {
+.popup-dinamico-fechar {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -222,16 +222,16 @@
   cursor: pointer;
   border: 2px solid black;
 }
-.popup-confirmacao-fechar svg {
+.popup-dinamico-fechar svg {
   display: block;
   width: 100%;
   height: 100%;
   transform: scale(3);
 }
-.popup-confirmacao-fechar path {
+.popup-dinamico-fechar path {
   fill: #fff;
 }
-.popup-ok {
+.popup-dinamico-ok{
   position: relative;
   left: 46%;
   text-align: center;
@@ -240,7 +240,8 @@
   font-size: medium;
   background-color: #064c2d;
 }
-.popup-negacao {
+/* INICIO CSS DO POPUP DE NOTIFICAÇÃO */
+.popup-notificacao {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -249,12 +250,15 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-.popup-negacao-content {
+.popup-content-notificacao {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 60%;
+  height: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
   padding: 10px;
@@ -262,17 +266,14 @@
   border: 10px solid #76d4a0;
   border-radius: 10px;
 }
-.popup-negacao h2 {
-  color: #000;
-  font-size: 2rem;
-  text-align: center;
-  border-radius: 0.5rem;
+.popup-notificacao.active {
+  opacity: 1;
 }
-.popup-negacao-fechar {
+.popup-notificacao-fechar {
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 3%;
+  top: 1%;
   right: -1%;
   text-align: center;
   line-height: 30px;
@@ -282,21 +283,125 @@
   cursor: pointer;
   border: 2px solid black;
 }
-.popup-negacao-fechar svg {
+.popup-notificacao-fechar svg {
   display: block;
   width: 100%;
   height: 100%;
   transform: scale(3);
 }
-.popup-negacao-fechar path {
+.popup-notificacao-fechar path {
   fill: #fff;
 }
-.popup-negacao-ok {
-  position: relative;
-  left: 46%;
+.retangulo-notificacao {
+  top: 12%;
+  left: 0%;
+  width: 100%;
+  height: 20%;
+  background-color: #75d69f;
+  margin: 0 auto;
+  position: absolute;
+  border: 1px solid black;
+}
+.popup-mensagem {
+  font-size: 18px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+}
+.popup-mensagem2 {
+  font-size: 18px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+}
+.popup-mensagem3 {
+  font-size: 18px;
+  position: absolute;
+  top: 73%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+}
+.popup-notificacao-ok {
+  position: absolute;
+  left: 47%;
+  bottom: 0%;
   text-align: center;
   color: #d0e9da;
   border-radius: 20px;
   font-size: medium;
   background-color: #064c2d;
+}
+/* INICIO DO CSS DO POPUP DA EQUIPE */
+.popup-equipe {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.popup-content-equipe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 10px solid #76d4a0;
+  border-radius: 10px;
+}
+.popup-equipe.active {
+  opacity: 1;
+}
+.popup-titulo-equipe {
+  position: relative;
+  text-align: center;
+  color: #d0e9da;
+}
+.popup-fechar-equipe {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 2%;
+  right: -2%;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+  background-color: #ff0000;
+  color: #fff;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.popup-fechar-equipe svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: scale(3);
+}
+.popup-fechar-equipe path {
+  fill: #fff;
+}
+.retangulo-equipe {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  padding-bottom: 10px;
+  background-color: #75d69f;
+  margin: 0 auto;
+  overflow-y: scroll;
+  border: 1px solid black;
 }

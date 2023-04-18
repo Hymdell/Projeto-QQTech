@@ -3,14 +3,16 @@ table {
   border-collapse: collapse;
   border: 1px solid black;
 }
-td,
-th {
-  padding: 5px;
+td{
+  
+  font-size: 100%;
+  font-weight: bold;
   text-align: center;
   color: #333;
   background-color: #d0e9da;
   border: 1px solid black;
 }
+
 th {
   font-size: 100%;
   font-weight: bold;
@@ -18,8 +20,9 @@ th {
   color: rgb(0, 0, 0);
   border: 1px solid black;
 }
+
 caption{
-  font-size: 200%;
+  font-size: 100%;
   font-weight: bold;
   background-color: #d0e9da;
   color: rgb(0, 0, 0);
@@ -105,8 +108,10 @@ button:hover {
   background-color: #09653c;
 }
 .editar {
+  padding: 5px;
   background-color: #4caf50;
 }
 .excluir {
+  padding: 5px;
   background-color: #f44336;
 }

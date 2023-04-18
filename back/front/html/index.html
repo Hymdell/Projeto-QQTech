@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/site/css/indexStyle.css" />
-    <link rel="stylesheet" href="/site/css/globalStyle.css" />
+    <link rel="stylesheet" href="/front/css/indexStyle.css" />
+    <link rel="stylesheet" href="/front/css/globalStyle.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
@@ -15,8 +15,8 @@
   <body>
     <header>
       <div class="logoContainer">
-        <img class="logoQueroQuero" src="/site/img/Logo_QueroQuero.png" />
-        <img class="logoVerdeCard" src="/site/img/Logo_VerdeCard.png" />
+        <img class="logoQueroQuero" src="/front/img/Logo_QueroQuero.png" />
+        <img class="logoVerdeCard" src="/front/img/Logo_VerdeCard.png" />
       </div>
       <div class="formaHeader">
         <svg
@@ -33,11 +33,14 @@
       </div>
     </header>
 
-      <div id="login" class="container">
-        <h1 class="titulo">Quero Férias</h1>
-        <div class="formLogin">
+    <div id="login" class="container">
+      <h1 class="titulo">Quero Férias</h1>
+      <div class="formLogin">
+        <form action="/login" method="post">
           <div class="inputIcone">
             <input
+              autocomplete="off"
+              required
               class="inputMatricula"
               type="text"
               name="matricula"
@@ -48,6 +51,8 @@
           <br /><br />
           <div class="inputIcone">
             <input
+              autocomplete="off"
+              required
               class="inputSenha"
               type="password"
               name="senha"
@@ -56,13 +61,11 @@
             />
           </div>
           <br /><br />
-          <div class="containerErro">
-            <p class=".mensagemErro" id="mensagemErro"></p>
-          </div>
-          <button class="botaoLogin" onclick="Cargo()">Login</button>
-        </div>
+          <button type="submit" id="btnLogin" class="botaoLogin">Login</button>
+        </form>
       </div>
-    
+    </div>
+
     <footer>
       <div class="formaFooter">
         <svg
@@ -79,5 +82,5 @@
       </div>
     </footer>
   </body>
-  <script src="/site/js/index.js"></script>
+  <script src="/front/js/index.js"></script>
 </html>

@@ -33,7 +33,7 @@
   display: inline-block;
 }
 .inputIcone input[type="text"] {
-  background-image: url("/site/img/user-solid.svg");
+  background-image: url("/front/img/user-solid.svg");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px 20px;
@@ -45,7 +45,7 @@
   color: #555;
 }
 .inputIcone input[type="password"] {
-  background-image: url("/site/img/key-solid.svg");
+  background-image: url("/front/img/key-solid.svg");
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 30px 20px;

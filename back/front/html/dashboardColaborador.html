@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/front/css/dashboardColaboradorStyle.css" />
+    <link rel="stylesheet" href="/front/css/globalStyle.css" />
+    <link rel="stylesheet" href="/front/css/popupsColaborador.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/e0ab6c4879.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <title>Dashboard Colaborador</title>
+  </head>
+  <body>
+    <header>
+      <div class="logoContainer">
+        <img class="logoQueroQuero" src="/front/img/Logo_QueroQuero.png" />
+        <img class="logoVerdeCard" src="/front/img/Logo_VerdeCard.png" />
+      </div>
+      <div class="formaHeader">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </header>
+
+    <div id="sidebar" class="sidebar">
+      <div class="sidebar-icon">
+        <span style="font-size: 6em; color: #09653c"
+          ><i class="fa-solid fa-user"></i
+        ></span>
+      </div>
+      <div class="sidebar-info">
+        <h3 id="nomeColaborador">Nome:</h3>
+        <h3 id="matriculaColaborador">Matricula:</h3>
+        <h3 id="cargoColaborador">Cargo:</h3>
+        <h3 id="gestorColaborador">Gestor:</h3>
+      </div>
+      <h3 id="mensagemAviso"></h3>
+      <div class="sidebar-buttons">
+        <button id="btnAbrirPopup" class="solicitar">
+          Solicitar
+          <span style="color: #dd8d24"
+            ><i class="fa-solid fa-plus"></i
+          ></span></button
+        ><br />
+        <form action="/logout" method="post">
+          <button id="btnSair" class="sair">
+            Sair
+            <span style="color: #dd8d24"
+              ><i class="fa-solid fa-sign-out"></i
+            ></span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="grafico" class="grafico">
+      <h1 class="titulo-grafico">Colaboradores da Equipe</h1>
+      <h1 class="titulo-grafico">Status</h1>
+      <p id="colaboradores-total" class="texto-grafico">Total: 0 Colaboradores</p>
+      <div class="status">
+        <span class="ativos"></span>
+        <p id="colaboradores-ativos" class="texto-grafico">Ativos 0</p>
+      </div>
+      <div class="status">
+        <span class="ferias"></span>
+        <p id="colaboradores-ferias" class="texto-grafico">Férias 0</p>
+      </div>
+      <div class="status">
+        <span class="atraso"></span>
+        <p id="colaboradores-atraso" class="texto-grafico">Atrasados 0</p>
+      </div>
+      <button id="btnEquipe" class="botao-grafico">Ver Equipe</button>
+      <div class="pizza"><canvas id="graficoColaboradores"></canvas></div>
+    </div>
+
+    <div id="notificacoes" class="notificacoes">
+      <h1 class="titulo-notificacoes">Notificações</h1>
+      <p id="numero-notificacoes" class="texto-notificacoes">Você tem 0 notificação!</p>
+      <button id="btnNotificacao" class="botao-notificacoes">
+        Ver notificações
+      </button>
+      <span id="notificacao-indicador" class="notificacao-indicador"></span>
+    </div>
+
+    <div id="popupNotificacao" class="popup-notificacao">
+      <div class="popup-content-notificacao">
+        <button id="btnFecharPopupNotificacao" class="popup-notificacao-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <form action="/atualizaLido" method="post">
+          <div class="retangulo-notificacao">
+            <table>
+              <caption>
+                ÚLTIMA SOLICITAÇÃO
+              </caption>
+              <thead>
+                <tr>
+                  <th>Data Criação</th>
+                  <th>Data Início</th>
+                  <th>Dias</th>
+                  <th>Data Final</th>
+                  <th>Status</th>
+                  <th>13º</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-notificacao"></tbody>
+            </table>
+          </div>
+          <h2 id="mensagem-gestor" class="popup-mensagem"></h2>
+          <h2 id="mensagem-15dias" class="popup-mensagem2"></h2>
+          <h2 id="mensagem-aquisitivo" class="popup-mensagem3"></h2>
+          <div>
+            <button
+              type="submit"
+              class="popup-notificacao-ok"
+              id="btnOkNotificacao"
+            >
+              OK
+            </button>
+          </div>
+          <input type="hidden" name="idSolicitacaoNoti" id="idSolicitacaoNoti">
+        </form>
+      </div>
+    </div>
+
+    <div id="popupEquipe" class="popup-equipe">
+      <div class="popup-content-equipe">
+        <button id="btnFecharPopupEquipe" class="popup-fechar-equipe">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <div class="formaHeaderPopup">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="popup-titulo-equipe">Equipe</h2>
+        <div class="retangulo-equipe">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Matrícula</th>
+                <th>Cargo</th>
+                <th>Data Ingresso</th>
+                <td>Status</td>
+              </tr>
+            </thead>
+            <tbody id="tabela-equipe">
+            </tbody>
+          </table>
+        </div>
+        <div class="formaFooterPopup">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="tabela" class="retangulo">
+      <table>
+        <caption>
+          Minhas Solicitações
+        </caption>
+        <thead>
+          <tr>
+            <th>Data de Criação</th>
+            <th>Data Início</th>
+            <th>Dias</th>
+            <th>Data Final</th>
+            <th>Antecipação do 13º</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-solicitacoes"></tbody>
+      </table>
+    </div>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <button id="btnFecharPopup" class="popup-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <div class="formaHeaderPopup">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+        <form action="/solicitarColaborador" method="post">
+          <h2 class="popup-titulo">SOLICITAÇÃO</h2>
+          <div>
+            <label class="popup-input-label" for="datainicio"
+              >Data de Início</label
+            >
+            <br />
+            <input
+              autocomplete="off"
+              required
+              class="popup-input"
+              type="date"
+              name="datainicio"
+              id="datainicio"
+            />
+          </div>
+          <div class="popup-dropdowns">
+            <div class="popup-dropdown">
+              <label for="dias" class="popup-dropdown-label"
+                >Quantidade de Dias</label
+              >
+              <select
+                autocomplete="off"
+                required
+                id="dias"
+                name="dias"
+                class="popup-dropdown-select"
+              >
+                <option value="5">5 Dias</option>
+                <option value="10">10 Dias</option>
+                <option value="15">15 Dias</option>
+                <option value="20">20 Dias</option>
+                <option value="30">30 Dias</option>
+              </select>
+            </div>
+          </div>
+          <div class="popup-dropdowns">
+            <div class="popup-dropdown">
+              <label for="decimoterceiro" class="popup-dropdown-label"
+                >Atencipação do 13º</label
+              >
+              <select
+                autocomplete="off"
+                required
+                id="decimoterceiro"
+                name="decimoterceiro"
+                class="popup-dropdown-select"
+              >
+                <option value="NÃO">NÃO</option>
+                <option value="SIM">SIM</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="popup-input-label" for="datafinal">Data Final</label>
+            <br />
+            <input
+              autocomplete="off"
+              required
+              class="popup-input"
+              type="date"
+              id="datafinal"
+              name="datafinal"
+            />
+          </div>
+          <div>
+            <button type="submit" class="popup-solicitar" id="btnSolicitar">
+              SOLICITAR
+            </button>
+          </div>
+        </form>
+        <div class="formaFooterPopup">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="popupDinamico" class="popup-dinamico">
+      <div class="popup-dinamico-content">
+        <button id="btnFecharPopupDinamico" class="popup-dinamico-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <h2 id="textoDinamico" class="popup-titulo"></h2>
+        <div>
+          <button class="popup-dinamico-ok" id="btnOk">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="formaFooter">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+
+    <script src="/front/js/dashboardColaborador.js"></script>
+  </body>
+</html>

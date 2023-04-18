@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/front/css/dashboardAdminStyle.css" />
+    <link rel="stylesheet" href="/front/css/globalStyle.css" />
+    <link rel="stylesheet" href="/front/css/popupsAdmin.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <title>Dashboard Admin</title>
+  </head>
+  <body>
+    <header>
+      <div class="logoContainer">
+        <img class="logoQueroQuero" src="/front/img/Logo_QueroQuero.png" />
+        <img class="logoVerdeCard" src="/front/img/Logo_VerdeCard.png" />
+      </div>
+      <div class="formaHeader">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </header>
+
+    <div id="sidebar" class="sidebar">
+      <div class="sidebar-icon">
+        <span style="font-size: 6em; color: #09653c"
+          ><i class="fa-solid fa-user"></i
+        ></span>
+      </div>
+      <div class="sidebar-info">
+        <h3 id="nomeAdmin">Nome:</h3>
+        <h3 id="matriculaAdmin">Matricula:</h3>
+        <h3 id="cargoAdmin">Cargo:</h3>
+        <h3 id="gestorAdmin">Gestor:</h3>
+      </div>
+      <div class="sidebar-buttons">
+        <button id="btnAbrirPopup" class="cadastrar">
+          Cadastrar
+          <span style="color: #dd8d24"
+            ><i class="fa-solid fa-plus"></i
+          ></span></button
+        ><br />
+        <form action="/logout" method="post">
+          <button id="btnSair" class="sair">
+            Sair
+            <span style="color: #dd8d24"
+              ><i class="fa-solid fa-sign-out"></i
+            ></span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div id="tabela" class="retangulo">
+      <table>
+        <caption>
+          Usuários
+        </caption>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Matrícula</th>
+            <th>Email</th>
+            <th>Gmail</th>
+            <th>Contrato</th>
+            <th>Função</th>
+            <th>Ingresso</th>
+            <th>Gestor</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-usuarios"></tbody>
+      </table>
+    </div>
+
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <button id="btnFecharPopup" class="popup-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <div class="formaHeaderPopup">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+        <form action="/admin" method="post">
+          <h2 id="titulo-popup" class="popup-titulo"></h2>
+          <div>
+            <input
+              class="popup-input nome"
+              type="text"
+              name="nome"
+              id="nome"
+              placeholder="Nome Completo"
+            />
+            <input
+              class="popup-input matricula"
+              type="text"
+              name="matricula"
+              id="matricula"
+              placeholder="Matrícula"
+            />
+          </div>
+          <div>
+            <input
+              class="popup-input email"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+            />
+            <input
+              class="popup-input email"
+              type="email"
+              name="gmail"
+              id="gmail"
+              placeholder="Gmail"
+            />
+          </div>
+          <div>
+            <div class="popup-titulo-data">Data de Ingresso</div>
+            <input
+              class="popup-input-data"
+              type="date"
+              name="dataingresso"
+              id="dataingresso"
+            />
+          </div>
+          <div class="popup-radio">
+            <div class="popup-titulo2">Tipo de Contrato</div>
+            <div class="popup-opcoes">
+              <input type="radio" name="contrato" id="clt" value="CLT" />
+              <label for="clt">CLT</label>
+              <input type="radio" name="contrato" id="pj" value="PJ" />
+              <label for="pj">PJ</label>
+            </div>
+            <div class="popup-titulo2">Tipo de conta</div>
+            <div class="popup-opcoes">
+              <input
+                type="radio"
+                name="tipo"
+                id="colaborador"
+                value="COLABORADOR"
+              />
+              <label for="colaborador">Colaborador</label>
+              <input type="radio" name="tipo" id="gestor" value="GESTOR" />
+              <label for="gestor">Gestor</label>
+            </div>
+          </div>
+          <div class="popup-dropdowns">
+            <div class="popup-dropdown">
+              <label for="gestordropdown" class="popup-dropdown-label"
+                >Gestor</label
+              >
+              <select
+                id="gestordropdown"
+                name="gestordropdown"
+                class="popup-dropdown-select"
+              ></select>
+            </div>
+            <div class="popup-dropdown">
+              <label for="cargodropdown" class="popup-dropdown-label"
+                >Função</label
+              >
+              <select
+                id="cargodropdown"
+                name="cargodropdown"
+                class="popup-dropdown-select"
+              >
+                <option value="Gerente Geral">Gerente Geral</option>
+                <option value="Frontend">Frontend</option>
+                <option value="Backend">Backend</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <button class="popup-cadastrar" id="btnCadastrar">CONCLUIR</button>
+          </div>
+          <input type="hidden" id="tipopopup" name="tipopopup" value="" />
+        </form>
+        <div class="formaFooterPopup">
+          <svg
+            data-name="Layer 1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div id="PopupExcluir" class="popup-excluir">
+      <div class="popup-excluir-content">
+        <button id="btnFecharPopupExcluir" class="popup-excluir-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <h2 class="popup-titulo">
+          Tem certeza que deseja excluir esse Colaborador?
+        </h2>
+        <div>
+          <button class="popup-excluir-sim" id="btnSimExcluir">Sim</button>
+          <button class="popup-excluir-nao" id="btnNaoExcluir">Não</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="popupDinamico" class="popup-dinamico">
+      <div class="popup-dinamico-content">
+        <button id="btnFecharPopupDinamico" class="popup-dinamico-fechar">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="50"
+            height="50"
+          >
+            <path
+              fill="#fff"
+              d="M18.3 6L12 12.3 5.7 6 4.3 7.4 10.6 13.7 4.3 20 5.7 21.4 12 15.1 18.3 21.4 19.7 20 13.4 13.7 19.7 7.4z"
+            />
+          </svg>
+        </button>
+        <h2 id="textoDinamico" class="popup-titulo"></h2>
+        <div>
+          <button class="popup-dinamico-ok" id="btnOk">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="formaFooter">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M1200 120L0 16.48 0 0 1200 0 1200 120z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+
+    <script src="/front/js/dashboardAdmin.js"></script>
+    <script
+      src="https://kit.fontawesome.com/e0ab6c4879.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

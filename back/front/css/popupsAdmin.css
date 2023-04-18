@@ -30,12 +30,18 @@
   text-align: center;
   color: #d0e9da;
 }
+.popup-titulo-data {
+  position: relative;
+  text-align: center;
+  color: #000000;
+  font-weight: bold;
+}
 .popup-fechar {
   position: absolute;
   width: 30px;
   height: 30px;
-  top: 2%;
-  right: -2%;
+  top: 1%;
+  right: -1.5%;
   text-align: center;
   line-height: 30px;
   font-size: 16px;
@@ -58,8 +64,20 @@
   border: 1px solid #000;
   border-radius: 5px;
   padding: 10px 10px 10px 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 5px;
+  position: relative;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+.popup-input-data {
+  left: 100px;
+  background-color: #d0e9da;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 10px 10px 10px 30px;
+  margin: 5px;
+  width: 160px;
   position: relative;
   background-position: left center;
   background-repeat: no-repeat;
@@ -67,21 +85,81 @@
   color: #000;
   font-weight: bold;
 }
-.popup-input-label {
-    font-weight: bold;
-  }
+.popup-input.nome {
+  background-position: 5px;
+  background-image: url("/front/img/user-solid.svg");
+}
+.popup-input.email {
+  background-position: 5px;
+  background-image: url("/front/img/envelope-solid.svg");
+}
+.popup-input.matricula {
+  background-position: 5px;
+  background-image: url("/front/img/id-card-solid.svg");
+}
+.popup-input.cpf_cnpj {
+  background-position: 5px;
+  background-image: url("/front/img/id-card-solid.svg");
+}
 .popup-input::placeholder {
   color: #999;
   text-decoration: underline;
+  font-weight: bold;
 }
-.popup-solicitar {
+.popup-cadastrar {
   position: relative;
-  left: 20%;
+  left: 163px;
   text-align: center;
   color: #d0e9da;
   border-radius: 50px;
   font-size: medium;
   background-color: #064c2d;
+}
+.popup-radio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.popup-titulo2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.popup-opcoes {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.popup-radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+.popup-radio label {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.popup-radio label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  position: absolute;
+  left: 0%;
+  bottom: 1px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+.popup-radio input[type="radio"]:checked + label:before {
+  background-color: #064c2d;
+  border-color: black;
 }
 .popup-dropdowns {
   display: flex;
@@ -90,8 +168,6 @@
 }
 .popup-dropdown {
   margin-bottom: 20px;
-  color: #000;
-  font-weight: bold;
 }
 .popup-dropdown-label {
   display: block;
@@ -107,7 +183,6 @@
   background-color: #d0e9da;
   font-size: 16px;
   color: #000000;
-  color: #000;
   font-weight: bold;
 }
 .popup-dropdown-select::-ms-expand {
@@ -179,8 +254,8 @@
 .formaFooterPopup .shape-fill {
   fill: #064c2d;
 }
-/* INICIO DO CSS DOS POPUPS DE CONFIRMAÇÃO E NEGAÇÃO */
-.popup-confirmacao {
+/*INICIO DO POPUP DE EXCLUIR */
+.popup-excluir {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -191,7 +266,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease-in-out;
 }
-.popup-confirmacao-content {
+.popup-excluir-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -202,13 +277,16 @@
   border: 10px solid #76d4a0;
   border-radius: 10px;
 }
-.popup-confirmacao h2 {
+.popup-excluir.active {
+  opacity: 1;
+}
+.popup-excluir h2 {
   color: #000;
   font-size: 2rem;
   text-align: center;
   border-radius: 0.5rem;
 }
-.popup-confirmacao-fechar {
+.popup-excluir-fechar {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -222,25 +300,35 @@
   cursor: pointer;
   border: 2px solid black;
 }
-.popup-confirmacao-fechar svg {
+.popup-excluir-fechar svg {
   display: block;
   width: 100%;
   height: 100%;
   transform: scale(3);
 }
-.popup-confirmacao-fechar path {
+.popup-excluir-fechar path {
   fill: #fff;
 }
-.popup-ok {
+.popup-excluir-sim{
   position: relative;
-  left: 46%;
+  left: 36%;
   text-align: center;
   color: #d0e9da;
   border-radius: 20px;
   font-size: medium;
   background-color: #064c2d;
 }
-.popup-negacao {
+.popup-excluir-nao{
+  position: relative;
+  left: 46%;
+  text-align: center;
+  color: #d0e9da;
+  border-radius: 20px;
+  font-size: medium;
+  background-color: #ff0000;
+}
+/* INICIO DO CSS DOS POPUPS DINÃMICO*/
+.popup-dinamico {
   display: none;
   position: fixed;
   z-index: 9999;
@@ -251,7 +339,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease-in-out;
 }
-.popup-negacao-content {
+.popup-dinamico-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -262,13 +350,13 @@
   border: 10px solid #76d4a0;
   border-radius: 10px;
 }
-.popup-negacao h2 {
+.popup-dinamico h2 {
   color: #000;
   font-size: 2rem;
   text-align: center;
   border-radius: 0.5rem;
 }
-.popup-negacao-fechar {
+.popup-dinamico-fechar {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -282,16 +370,16 @@
   cursor: pointer;
   border: 2px solid black;
 }
-.popup-negacao-fechar svg {
+.popup-dinamico-fechar svg {
   display: block;
   width: 100%;
   height: 100%;
   transform: scale(3);
 }
-.popup-negacao-fechar path {
+.popup-dinamico-fechar path {
   fill: #fff;
 }
-.popup-negacao-ok {
+.popup-dinamico-ok{
   position: relative;
   left: 46%;
   text-align: center;
